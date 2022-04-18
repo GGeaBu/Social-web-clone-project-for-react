@@ -8,6 +8,12 @@
         해당 sidebar에만 스크롤 바가 생기도록 한다. */
     overflow-y: scroll;
 
+    /* 전체 뷰포트 스크롤시 사이드바는 고정되어 내려오지 않는것을
+    수정 */
+    position: sticky;
+    top: 50px; /* topbar의 크기만큼 빼줌 */
+    
+
     background-color: yellowgreen;
 }
 
@@ -65,18 +71,4 @@ webkit을 사용해 이쁜 스크롤바로 바꾼다. */
     padding: 0;
     margin: 0;
     list-style: none;
-}
-
-.sidebarFriend {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.sidebarFriendImg {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
 }
