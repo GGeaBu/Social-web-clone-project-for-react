@@ -1,3 +1,82 @@
 .sidebar {
     flex: 3;
+    /* 아래와 같이 하는 이유는 기존에 있는 topbar가 50px을 이미 소지하고 있기 때문
+     만일 topbar의 크기를 빼주지 않는다면 scroll bar가 생기게 된다. */
+    height: calc(100vh - 50px);
+
+    /* 친구가 늘어날수록 뷰포트 전체의 스크롤이 생기게 하지 않고 
+        해당 sidebar에만 스크롤 바가 생기도록 한다. */
+    overflow-y: scroll;
+
+    background-color: yellowgreen;
+}
+
+/* sidebar안에 있는 스크롤바가 드럽게 못생겼기에
+webkit을 사용해 이쁜 스크롤바로 바꾼다. */
+::-webkit-scrollbar { 
+    /* 스크롤바의 폭 지정 */
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    /* 스크롤바의 뒷 배경 지정 */
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    /* 스크롤바의 스크롤 색상 지정 */
+    background-color: rgb(179, 179, 179);
+}
+
+.sidebarWrapper {
+    padding: 20px;
+    background-color: bisque;
+}
+
+.sidebarList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebarListItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebarIcon {
+    margin-right: 15px;
+}
+
+.sidebarButton {
+    width: 150px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.sidebarHr {
+    margin: 20px 0;
+}
+
+.sidebarFriendList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebarFriend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sidebarFriendImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
 }
