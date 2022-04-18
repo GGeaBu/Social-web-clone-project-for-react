@@ -1,0 +1,124 @@
+.topbarContainer {
+    height: 50px;
+    width: 100%;
+    background-color: #1877f2;
+    display: flex;
+    align-items: center;
+
+    /* top에서 0만큼 떨어진 지점에 촥 붙어서 스크롤 내려도 고정되도록 */
+    position: sticky; 
+    top: 0;
+}
+
+/* topbar의 각각 왼쪽, 가운데, 오른쪽 영역을 3:5:4 비율로 나누어서 가지도록
+flex값을 정해준다 */
+.topbarLeft {
+    flex: 3;
+}
+
+.logo {
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: white;
+
+    /* 마우스가 올라갔을때 잡는듯한 모습으로 변경 */
+    cursor: pointer;
+}
+
+.topbarCenter {
+    flex: 5;
+}
+
+.searchbar {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    /* material icon에서 기본적으로 주는 size값이 고정되어 있기에
+    내가 새롭게 주는 값으로 변경하기 위해 기존 값을 무시하기 위한
+    !important 를 적어준다. */
+    font-size: 20px !important;
+
+    margin-left: 10px;
+}
+
+.searchInput {
+    /* 기존 input 태그에 적용되어 있는 border제거함
+    input 태그를 직접 클릭하거나 마우스를 오렸을때만 border가 보이게 됨 
+    (안보이게하려면 focus시 ouline을 none으로 하면댐) */
+    border: none;
+
+    /* 100%로 하면 겉에 덮고 있는 div를 좀 넘어서서 삐져 나오고
+    70%정도로 하는게 제일 이쁜듯 */
+    width: 70%;
+}
+
+/* 해당 input태그에 마우스를 클릭해서 border line이 안생김 */
+.searchInput:focus {
+    outline: none;
+}
+
+.topbarRight {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+.topbarLink {
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.topbarIcons {
+    display: flex;
+}
+
+.topbarIconItem {
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.topbarIconBadge {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+
+    /* 알림 표시처럼 아이콘의 우상단 위에 동그랗게 표시되게 하기 위하여
+    position 값과 위치 값을 아래와 같이 설정한다. */
+    position: absolute;
+    top: -5px;
+    right: -5px;
+
+    /* text-align: center을 사용해도 되지만 이러면 수평 중앙 정렬만
+    되기 때문에 수직, 수평 둘 다 중앙 정렬 하기 위해
+    display를 flex로 바꾸고 중앙 정렬 해준다. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+}
+
+.topbarImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    /* 이미지가 크기가 바뀌어도 해당 크기 안에 화질을 갖추어 잘 들어맞게
+    하기 위하여 cover로 함  */
+    object-fit: cover;
+
+    cursor: pointer;
+}
